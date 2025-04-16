@@ -1,3 +1,7 @@
+.anta-regular {
+    font-family: "Anta", sans-serif;
+}
+
 .bg {
     width: 100dvw;
     height: 100dvh;
@@ -18,44 +22,195 @@
     z-index: 1;
 }
 
-/* .card {
-    width: 55%;
-    height: 60%;
-    background-image:
-        radial-gradient(circle at 50px 50px,
-            rgba(229, 189, 251, 0.40) 0%,
-            rgba(115, 158, 173, 0.3) 45%,
-            rgba(63, 143, 150, 0.25) 100%),
-        radial-gradient(circle at 150px 150px,
-            rgba(255, 255, 255, 0.015),
-            rgba(0, 0, 0, 0.133));
-    background-position: center;
-    z-index: 2;
-    border-radius: 40px;
-    border-color: black;
-    border-width: 20px;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-} */
-
 .card {
-    width: 55%;
-    height: 60%;
+    width: 50%;
+    height: fit-content;
     z-index: 2;
     border-radius: 40px;
-    -webkit-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(8px);
+    border-color: rgba(100, 148, 237, 0.386);
+    border-width: 2px;
+    border-style: solid;
+    overflow: hidden;
 }
 
 .card-bg {
-    background-image: url(../assets/card-gradient.png);
-    background-size: cover;
     background-color: rgba(255, 255, 255, 0.007);
 }
 
+.card-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/card-gradient.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: luminosity;
+    background-color: #00000036;
+    opacity: .8;
+    z-index: -1;
+}
+
 .border-gradient {
-    border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 4;
+    border-image: linear-gradient(to right, #3ad0d594 0%, #3a4fd538 100%) 4;
     border-style: solid;
-    border-width: 0.5px;
+    border-width: 2.5px;
     padding: 5px;
+}
+
+.pattern {
+    width: 100%;
+    padding: 20px;
+}
+
+.pattern::before {
+    content: '';
+    background-color: #c17ccc;
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/overlay_image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: luminosity;
+    opacity: 0.07;
+    /* 👈 Set your fake background opacity here */
+    z-index: -1;
+}
+
+
+.content {
+    z-index: 3;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Better than space-around for equal spacing */
+    padding: 5px 1.5em;
+    margin-left: 2rem;
+    font-size: clamp(0.5rem, 3.2vw, 1.76rem);
+    background-color: rgba(208, 198, 206, 0.1);
+    width: fit-content;
+
+    border-radius: 10px;
+}
+
+.title-text {
+    text-transform: uppercase;
+}
+
+.ball-icon {
+    width: clamp(1.2rem, 3vw, 2rem);
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+.middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 0 3rem 2rem;
+    margin-top: 1.5rem;
+}
+
+.details {
+    width: 50%;
+    flex-shrink: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px
+}
+
+.portrait {
+    width: 50%;
+    border-radius: 20px;
+    background-color: grey;
+    flex-basis: 2;
+    aspect-ratio: 1/1;
+    max-height: 380px;
+}
+
+.text {
+    color: #FAF8FA;
+}
+
+.label-text {
+    color: #C29BD2;
+    mix-blend-mode: screen;
+    font-size: clamp(0.5em, 1.2dvw, 1em);
+    line-height: 15px
+}
+
+.main-text {
+    font-size: 1.45em;
+    line-height: 1.25em;
+}
+
+#bio-text {
+    font-size: clamp(0.5em, 1.2dvw, 0.9em)
+}
+
+.badges {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.single-badge {
+    width: 10%;
+    height: auto;
+}
+
+
+
+@media (min-width: 1281px) {
+    .portrait {
+        width: 40%;
+    }
+
+    .badges {
+        width: 70%;
+        margin-top: 40px;
+    }
+
+    .middle {
+        padding-bottom: .5rem;
+    }
+
+    .single-badge {
+        width: 12%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .single-badge {
+        width: 14%
+    }
+}
+
+@media (max-width: 1024px) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 1400px) {
+    .badges {
+        width: 60%;
+        margin-top: 20px;
+    }
 }
