@@ -8,22 +8,70 @@
   <link rel="stylesheet" href="src/style-reset.css">
   <link rel="stylesheet" href="src/card.css">
   <title>Vite + TS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- Example App -->
   <!-- <div id="app"></div> -->
-  <div class="bg">
+  <div class="bg desktop">
     <img src="./assets/crystal-bg.desktop.png"
       alt="background with abstract crystal at opposite topleft and bottom right corners" id="crystals" />
     <div class="card card-bg">
-      <div class="title"></div>
-      <div class="details"></div>
-      <div class="portrait"></div>
-      <div class="badges"></div>
+      <div class="pattern">
+        <div class="content anta-regular">
+          <div class="title">
+            <img class="ball-icon" src="./assets/fake-pokeball.png" alt="fake pokeball icon" />
+            <h3 class="title-text text">
+              Trainer Card
+            </h3>
+            <img class="ball-icon" src="./assets/fake-pokeball.png" alt="fake pokeball icon" />
+          </div>
+          <div class="middle">
+            <div class="details">
+              <section id="name">
+                <p class="label-text">Name:</p>
+                <p class="main-text text">Gabriel Lira</p>
+              </section>
+              <section id="school">
+                <p class="label-text">University:</p>
+                <p class="main-text text">University of Texas Rio Grande Valley</p>
+              </section>
+              <section>
+                <p class="label-text">Bio:</p>
+                <p class="text" id="bio-text">Computer Science student with a creative background in design and media,
+                  currently focused on web
+                  development and software engineering. Experienced in blending visual design with code, and actively
+                  involved in the developer community.</p>
+              </section>
+            </div>
+            <div class="portrait">
+            </div>
+          </div>
+          <div class="badges">
+            <div class="single-badge">
+              <img src="assets/icons/react.png" alt="nodejs icon">
+            </div>
+            <div class="single-badge">
+              <img src="assets/icons/node_icon.png" alt="nodejs icon">
+            </div>
+            <div class="single-badge">
+              <img src="assets/icons/express.png" alt="nodejs icon">
+            </div>
+            <div class="single-badge">
+              <img src="assets/icons/next.png" alt="nodejs icon">
+            </div>
+            <div class="single-badge">
+              <img src="assets/icons/mongodb.png" alt="nodejs icon">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
 </body>
 
 </html>
