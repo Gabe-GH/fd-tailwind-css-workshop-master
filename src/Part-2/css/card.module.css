@@ -1,0 +1,46 @@
+.bg_gradient {
+    background: linear-gradient(#12001B 33%, #34004E 100%);
+}
+
+.card_bg {
+    background-color: rgba(255, 255, 255, 0.007);
+}
+
+.card_bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/card-gradient.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: luminosity;
+    background-color: #00000036;
+    opacity: .8;
+    z-index: -1;
+}
+
+
+.pattern {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.pattern::before {
+    content: '';
+    background-color: #c17ccc;
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/overlay_image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: luminosity;
+    opacity: 0.07;
+    z-index: -1;
+}
+
+.anta_regular {
+    font-family: "Anta", sans-serif;
+}
